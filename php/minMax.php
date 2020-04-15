@@ -16,15 +16,13 @@ function minMax($operations, $x){
         if ($value == 'push') {
             $ordered[] = $x[$key];
             arsort($ordered);
-            $minMax[] = min($ordered) * max($ordered);
         } 
         if ($value == 'pop') {
             $clave = array_search($x[$key], $ordered);
             unset($ordered[$clave]);
-            $minMax[] = min($ordered) * max($ordered);
         }
+        $minMax[] = min($ordered) * max($ordered);
     }
-    
     return $minMax;
 }
 
